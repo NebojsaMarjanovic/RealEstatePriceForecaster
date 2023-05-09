@@ -2,16 +2,16 @@ body{
   background-color: #9cd5ec;
   /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(6,75,164,1) 62%, rgba(0,212,255,1) 100%);  */
 }
-path{
-  /* fill:#00394f; */
-}
+/* path{
+  fill:#00394f;
+} */
 
 
-path:hover{
+/* path:hover{
   fill:#e2e5e6;
   transition: 0.6s;
   cursor: pointer;
-}
+} */
 
 .svgContainer{
   display: flex;
@@ -20,3 +20,52 @@ path:hover{
   flex-direction: column;
 }
 
+.sellingContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.inputForm{
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 55%;
+  margin-bottom: 20px;
+}
+
+.btnCalculate{
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-top: 2vh;
+}
+
+.btnCalculate:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.btnCalculate:hover {
+  background-color: #2c974b;
+}

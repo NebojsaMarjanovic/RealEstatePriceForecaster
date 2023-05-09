@@ -1,11 +1,15 @@
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import MapCard from './MapCard';
+import SellingInputForm from './SellingInputForm';
+import SellingCard from './SellingCard';
 
 
 function HomePageCard(){
 
+  //screen determines which type of home page screen will be shown
+  const[screen, setScreen]=useState();
 
     const submit = () => {
         confirmAlert({
@@ -15,13 +19,13 @@ function HomePageCard(){
             {
               label: 'Kupujem',
               onClick: () => {
-                console.log("Kupujem")
+                setScreen(0);
               }
             },
             {
               label: 'Prodajem',
               onClick: () => {
-                console.log("Prodajem")
+                setScreen(1);
               }            
             }
           ]
@@ -35,9 +39,13 @@ function HomePageCard(){
     },[])
 
     return(
+      <div>
+      {screen===1 ?
         <div className='background'>
-            <MapCard></MapCard>
-        </div>
+          <SellingCard/>
+        </div> :null
+      }
+      </div>
     )
 }
 export default HomePageCard;
