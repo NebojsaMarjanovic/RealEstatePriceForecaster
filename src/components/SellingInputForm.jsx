@@ -10,7 +10,7 @@ function SellingInputForm(props){
     const[neighborhood, setNeighborhood]=useState([]);
     const[municipality, setMunicipality] = useState();
     const roomCount=['1.0', '1.5', '2.0', '2.5', '3.0', '3.5', '4.0', '4.5', '5.0'];
-    const heatingType=["Etažno", "Centralno", "Struja", "Gas"] //treba da se napravi mapa na backendu
+    const heatingType=["Etažno", "Centralno", "Struja", "Gas", "TA peć", "Klima", "Podno", "Norveški radijatori", "Bez grejanja"] 
     const [price, setPrice] = useState(0);
 
 
