@@ -18,6 +18,7 @@ function SellingInputForm(props){
         location:'',
         quadrature:'',
         roomCount:'',
+        floor:'',
         heatingType:'',
         elevator:''
     });
@@ -25,12 +26,6 @@ function SellingInputForm(props){
     function handleInput(e){
         let inputData = realEstateData;
         inputData[e.target.name]=e.target.value;
-        setRealEstateData(inputData);
-    }
-
-    function handleSelect(key,value){
-        let inputData = realEstateData;
-        key=value;
         setRealEstateData(inputData);
     }
 
@@ -46,8 +41,8 @@ function SellingInputForm(props){
 		e.preventDefault();
         axios.post('https://localhost:7149/api/Price', realEstateData)
             .then((res)=>{
-                console.log(res.data.price);
-                setPrice(res.data.price);
+                console.log(res.data);
+                setPrice(res.data);
             });
     }
     
@@ -110,6 +105,16 @@ function SellingInputForm(props){
                     />
                 </div>
                 <div>
+                    <label>Sprat</label>
+                    <input
+                        type="text"
+                        name="floor"
+                        onInput={handleInput}
+                        className="inputForm"
+                        required = 'true'
+                    ></input>
+                </div>
+                <div>
                     <label>Grejanje</label>
                     <Combobox
                         defaultValue=""
@@ -136,7 +141,7 @@ function SellingInputForm(props){
                     </button>
                 </div>
                 <div>
-                    <h3>{price!==0 ? price : null}</h3>
+                    <h3>{price!==0 ? <>Procenjena cena nekretnine je {price}€.</> : null}</h3>
                 </div>
             </form>
         </div>
