@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import MapCard from './MapCard';
-import SellingInputForm from './SellingInputForm';
+import PriceCalculatorCard from './PriceCalculatorCard';
 
 
-function SellingCard(){
+function CalculationCard(){
 
     const[location, setLocation]=useState();
 
@@ -12,13 +12,12 @@ function SellingCard(){
         console.log(newValue);
     };
 
-
     return(
         <div className='sellingContainer'>
-            <SellingInputForm location={location}/>
+            <PriceCalculatorCard location={location}/>
             <MapCard onChange={handleLocationChange}/>
         </div>
     )
 }
 
-export default SellingCard;
+export default CalculationCard;

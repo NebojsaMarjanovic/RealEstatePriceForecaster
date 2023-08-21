@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-//trebace da se vraca return vrednost kad se klikne nesto. vracas odavde u SellingInputForm.jsx
 function MapCard(props){
   
   const handleChange = (newValue) =>{
@@ -19,7 +18,6 @@ function MapCard(props){
   }
 
   const handleMouseEnter = (elementId) => {
-    console.log(elementId)
     setHoveredElement(elementId);
   };
   
@@ -49,7 +47,7 @@ function MapCard(props){
 
      return(
         <div className="svgContainer">
-        <p>{location}</p>
+        {hoveredElement!==null ? <p><i>{location}</i></p> : null}
        <svg
         xmlns="http://www.w3.org/2000/svg"
         width="400"
