@@ -1,6 +1,9 @@
+html{
+  min-height: 100%;
+}
 body{
   /* background-color: #9cd5ec; */
-  background-image:  url('img/bg1.jpg');
+  background-image:linear-gradient(rgba(158, 128, 123, 0.418), rgba(124, 124, 124, 0.5)), url('img/bg1.jpg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
@@ -95,10 +98,13 @@ body{
   align-items: center;
   flex-direction: column;
   margin-bottom: 5vh;
+  background-color: rgba(255, 213, 5, 0.5);
+  padding: 0.5em;
+  border-radius: 10px;
+
 }
 
 .btnForecast{
-    width: 10%;
     appearance: none;
     background-color: #2ea44f;
     border: 1px solid rgba(27, 31, 35, .15);
@@ -162,7 +168,7 @@ body{
   align-items: left;
   flex-direction: column;
   justify-content: space-around;
-  background-color: wheat;
+  /* background-color: rgba(237, 160, 17, 0.5); */
   border-radius: 5%;
 }
 
@@ -189,4 +195,72 @@ input.checked::before {
   position: absolute;
   right: 1px;
   top: -5px;
+}
+
+.priceCalculationContainer{
+  width: 500px;
+  background-color: rgba(255, 213, 5, 0.5);
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+.btnContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.forecastContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.calculatedPriceContainer{
+  margin-top: 2vh;
+  border-radius: 10px;
+  font-style: oblique;
+  padding: 0.5em;
+}
+
+.calculatedPriceContainer h3:hover{
+  cursor: pointer;
+}
+
+.inputForm h3:hover{
+  cursor: pointer;
+}
+
+.aboutContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 25vh;
+  background-color: rgba(255, 213, 5, 0.7);
+  border-radius: 15px;
+  padding: 5vh;
+  font-family: initial;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.aboutSlika{
+  width: 800px;
+  height: 400px;
+  border: 3px solid black;
+  margin-bottom: 2vh;
+
+}
+
+.paragraphContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ border-bottom: 1px solid black;
+ border-top: 1px solid black;
 }

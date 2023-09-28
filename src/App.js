@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import CalculationCard from './components/CalculationCard';
 import ForecastCard from './components/ForecastCard';
 import NavigationBar from './components/NavigationBar';
+import AboutCard from './components/AboutCard';
 
 
 
@@ -37,6 +38,15 @@ function App() {
       element={
         <>
         <CalculationCard/>
+        </>
+      }
+        />
+
+<Route
+      path="/uputstvo"
+      element={
+        <>
+        <AboutCard/>
         </>
       }
         />

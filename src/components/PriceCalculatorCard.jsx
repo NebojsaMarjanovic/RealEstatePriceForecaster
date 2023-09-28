@@ -2,6 +2,9 @@ import React, { useState,useEffect } from "react"
 import "react-widgets/styles.css"; 
 import Combobox from "react-widgets/Combobox";
 import axios from 'axios';
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
+import {AiOutlineInfoCircle} from 'react-icons/ai';
 
 
 function PriceCalculatorCard(props){
@@ -82,9 +85,9 @@ function PriceCalculatorCard(props){
    
 
     return(
-        <div>
+        <div className="priceCalculationContainer">
             <form>
-                <h2>Unesite podatke o nekretnini</h2>
+                <h2>🏡Unesite podatke o nekretnini</h2>
                 <div>
                 <label><b>Opština</b></label>
                     <input
@@ -98,7 +101,7 @@ function PriceCalculatorCard(props){
                     ></input>
                 </div>
                 <div>
-                <div>
+                <div >
                     <label><b>Naselje</b></label>
                     <Combobox
                         defaultValue=""
@@ -122,7 +125,7 @@ function PriceCalculatorCard(props){
                         value={quadrature}
                     ></input>
                 </div>
-                <div>
+                <div >
                     <label><b>Broj soba</b></label>
                     <Combobox
                         defaultValue=""
@@ -152,7 +155,7 @@ function PriceCalculatorCard(props){
                         <label htmlFor='checkLastFloor'><b>Stan na poslednjem spratu</b></label>
                 </div>
                 </div>
-                <div>
+                <div >
                     <label><b>Grejanje</b></label>
                     <Combobox
                         defaultValue=""
@@ -174,16 +177,28 @@ function PriceCalculatorCard(props){
                         <label htmlFor='checkedRegistered'><b>Uknjižen stan</b></label>
                     </div>
               </div>
-                <div>
+                <div className="btnContainer">
                     <button onClick={calculatePrice} className="btnCalculate">
                         <b>Izračunaj cenu</b>
                     </button>
                 </div>
-                <div>
-                    <h3>{price!==0 ? <>Procenjena cena nekretnine je {price}€.</> : null}</h3>
-                </div>
+               
                 </div>
             </form>
+             {price!==0 ?
+                <div className="calculatedPriceContainer">
+                    <h3 data-tooltip-id="my-tooltip-1" style={{ backgroundColor: "#999" }}>
+                        {price!==0 ? <>💸Procenjena cena nekretnine je <b>{price}€</b>. <AiOutlineInfoCircle/></> : null}</h3>
+                </div> : null}
+                <Tooltip
+        id="my-tooltip-1"
+        place="bottom"
+      >
+        Procenjena cena izračunata je na osnovu trenutno raspoloživih oglasa 
+        nekretnina na sajtovima oglašivača čiji su podaci korišćeni. 
+        Za detaljnije informacije o podacima i procesu procenjivanja nekretnina posetite stranicu <i>O servisu</i>.
+        </Tooltip>
+      
         </div>
     )
 

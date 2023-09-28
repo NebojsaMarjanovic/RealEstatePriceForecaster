@@ -6,6 +6,7 @@ function NavigationBar() {
 		<div className='topnav'>
 			<Link to="/predvidiCenu" className="stavka"><i>Predvidite cenu</i></Link>
 			<Link to ="/proceniNekretninu" className="stavka"><i>Procenite nekretninu</i></Link>
+			<Link to ="/uputstvo" className="stavka"><i>O servisu</i></Link>
 		</div>		
 	);
 }
