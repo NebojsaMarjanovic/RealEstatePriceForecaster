@@ -12,9 +12,4 @@ Predictive components are implemented using microservices architecure, where eac
 1. microservice for making predictions of future real estate market prices trends, based on analysis of historical data and
 2. microservice for making calculation based of real estate characteristics.
 
-In the next picture, you can take a look at this architecture
-
-<p align="center">
-<img width="649" alt="arhitektura" src="https://github.com/NebojsaMarjanovic/RealEstatePriceForecaster/assets/74599737/620d7f6d-7348-47b7-bf26-b5de25de7631">
-</p>
 
